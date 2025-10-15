@@ -1,0 +1,320 @@
+/* ==================================== */
+/* 2. Variáveis de Tema (Light e Dark)  */
+/* ==================================== */
+
+/* --- Tema Claro (Light) --- */
+html[data-theme="light"] {
+    /* Fundo: Claro, relaxante (Cinza claro suave) */
+    --color-background: #f4f7f6; 
+    /* Texto: Predominante Preto */
+    --color-text-primary: #1e1e1e;
+    /* Cor de Destaque 1 (Fundo de elementos/Navbar): Branco */
+    --color-highlight-bg: #ffffff;
+    /* Cor de Destaque 2 (Texto de destaque/Botões primários): Azul Escuro */
+    --color-secondary-accent: #003366; 
+    /* Bordas/Linhas: Cinza suave */
+    --color-border: #cccccc;
+    /* Sombra: Suave, escura */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* --- Tema Escuro (Dark) --- */
+html[data-theme="dark"] {
+    /* Fundo: Escuro, relaxante (Cinza muito escuro) */
+    --color-background: #1e242a; 
+    /* Texto: Predominante Branco */
+    --color-text-primary: #e0e0e0;
+    /* Cor de Destaque 1 (Fundo de elementos/Navbar): Azul Escuro (observável) */
+    --color-highlight-bg: #2d3840;
+    /* Cor de Destaque 2 (Texto de destaque/Botões primários): Branco suave (Não vibrante) */
+    --color-secondary-accent: #b0b0b0; 
+    /* Bordas/Linhas: Cinza escuro */
+    --color-border: #444444;
+    /* Sombra: Suave, clara */
+    --shadow-color: rgba(0, 0, 0, 0.4); 
+}
+
+/* ==================================== */
+/* 1. Reset, Global e No-Scroll         */
+/* ==================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* No scroll: Altura total da viewport */
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.4s, color 0.4s;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    /* Garante que o body não crie scroll */
+    overflow: hidden; 
+}
+
+/* ==================================== */
+/* Cabeçalho (Header)                   */
+/* ==================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--color-highlight-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.header-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-secondary-accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.header-logo:hover {
+    color: color-mix(in srgb, var(--color-secondary-accent), var(--color-text-primary) 20%);
+}
+
+/* Barra de Pesquisa */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    max-width: 600px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+    background-color: var(--color-background); 
+    color: var(--color-text-primary);
+    transition: background-color 0.4s;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: 1px solid var(--color-secondary-accent);
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background-color: var(--color-secondary-accent);
+    color: var(--color-highlight-bg); 
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: color-mix(in srgb, var(--color-secondary-accent), black 10%);
+}
+
+/* Usuário e Tema */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-auth-button {
+    padding: 8px 15px;
+    border: 2px solid var(--color-secondary-accent);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--color-secondary-accent);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.user-auth-button:hover {
+    background-color: var(--color-secondary-accent);
+    color: var(--color-highlight-bg); 
+}
+
+.theme-toggle-button {
+    padding: 10px;
+    font-size: 1.3rem;
+    border: none;
+    background: none;
+    color: var(--color-secondary-accent);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle-button:hover {
+    background-color: var(--color-border);
+}
+
+/* ==================================== */
+/* Conteúdo Principal (Main Body)       */
+/* ==================================== */
+
+.main-content {
+    flex-grow: 1; 
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* Permite scroll apenas nesta área se o conteúdo for alto (sem forçar o scroll no <body>) */
+    overflow-y: auto; 
+}
+
+/* Descrição do Projeto */
+.project-description {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-description h1 {
+    color: var(--color-secondary-accent);
+    margin-bottom: 10px;
+}
+
+/* ==================================== */
+/* Carrossel de Anos                    */
+/* ==================================== */
+
+.years-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.carousel-container {
+    position: relative;
+    padding: 0 60px; 
+}
+
+.year-carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-cards-wrapper {
+    display: flex;
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    gap: 30px;
+    padding: 10px 0;
+    
+    /* Esconde a barra de rolagem horizontal nativa */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel-cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    min-width: 200px; 
+    height: 140px;
+    flex-shrink: 0;
+    background-color: var(--color-highlight-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-shadow);
+    background-color: color-mix(in srgb, var(--color-highlight-bg), var(--color-secondary-accent) 5%); 
+}
+
+.carousel-card h3 {
+    font-size: 2.2rem;
+    color: var(--color-secondary-accent);
+}
+
+.carousel-card p {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Botões de Seta do Carrossel */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-secondary-accent);
+    color: var(--color-highlight-bg);
+    border: none;
+    padding: 12px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10;
+    box-shadow: 0 0 10px var(--shadow-color);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.carousel-arrow:hover {
+    opacity: 0.9;
+}
+
+.carousel-arrow.left {
+    left: 0;
+}
+
+.carousel-arrow.right {
+    right: 0;
+}
+
+/* Mensagem de Ano Não Cadastrado */
+.carousel-message {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-secondary-accent);
+    background-color: var(--color-highlight-bg);
+    border: 2px dashed var(--color-border);
+    border-radius: 10px;
+}
+
+/* Definição das cores dos times */
+
+/* Tema Claro */
+html[data-theme="light"] .time-branco {
+    color: #333333; /* Cinza Escuro: Representa 'Branco', mas contrasta com o fundo claro */
+    font-weight: bold;
+}
+
+html[data-theme="light"] .time-azul {
+    color: #007bff; /* Azul vibrante, contrasta com o fundo claro */
+    font-weight: bold;
+}
+
+/* Tema Escuro */
+html[data-theme="dark"] .time-branco {
+    color: #f0f0f0; /* Branco Suave: Contraste perfeito no fundo escuro */
+    font-weight: bold;
+}
+
+html[data-theme="dark"] .time-azul {
+    color: #4da6ff; /* Azul Claro: Contraste perfeito no fundo escuro */
+    font-weight: bold;
+}

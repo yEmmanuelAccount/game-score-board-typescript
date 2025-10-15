@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Score Board - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <button class="header-logo" onclick="window.location.reload()">GamePlacar</button>
+
+        <div class="search-bar-container">
+            <input type="text" id="year-search" class="search-input" placeholder="Pesquisar ano (Ex: 2023)">
+            <button id="search-button" class="search-button" title="Pesquisar Ano"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="header-right">
+            <button class="user-auth-button">Criar Conta / Login</button>
+
+            <button id="theme-toggle" class="theme-toggle-button" title="Alternar Tema">
+                <i class="fas fa-sun" id="theme-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="project-description">
+            <h1>Placar de Partidas: AZUL vs BRANCO </h1>
+            <p>Bem-vindo ao <strong> Game Score Board </strong>. Este projeto simula uma disputa anual entre os times <span class="time-azul">Azul</span> e <span class="time-branco">Branco</span>, registrando as partidas e determinando o vencedor de cada ano. Explore os anos abaixo para ver os placares detalhados e o campeão de cada temporada!</p>
+        </section>
+
+        <section class="years-section">
+            <h2>Anos Cadastrados</h2>
+            <div id="carousel-container" class="carousel-container">
+
+                <div id="no-games-message" class="carousel-message" style="display: none;">
+                    Jogos ainda não cadastrados. Entre em contato se tiver os dados referentes a esse ano.
+                </div>
+
+                <div id="year-carousel" class="year-carousel">
+
+                    <button id="prev-arrow" class="carousel-arrow left" title="Anterior"><i class="fas fa-chevron-left"></i></button>
+
+                    <div id="cards-wrapper" class="carousel-cards-wrapper">
+                        <div class="carousel-card" data-year="2020" onclick="console.log('Navegar para 2020')">
+                            <h3>2020</h3>
+                            <p>Ver Placar</p>
+                        </div>
+                        <div class="carousel-card" data-year="2021" onclick="console.log('Navegar para 2021')">
+                            <h3>2021</h3>
+                            <p>Ver Placar</p>
+                        </div>
+                        <div class="carousel-card" data-year="2022" onclick="console.log('Navegar para 2022')">
+                            <h3>2022</h3>
+                            <p>Ver Placar</p>
+                        </div>
+                        <div class="carousel-card" data-year="2023" onclick="console.log('Navegar para 2023')">
+                            <h3>2023</h3>
+                            <p>Ver Placar</p>
+                        </div>
+                        <div class="carousel-card" data-year="2024" onclick="console.log('Navegar para 2024')">
+                            <h3>2024</h3>
+                            <p>Ver Placar</p>
+                        </div>
+                        <div class="carousel-card" data-year="2025" onclick="console.log('Navegar para 2025')">
+                            <h3>2025</h3>
+                            <p>Ver Placar</p>
+                        </div>
+                    </div>
+
+                    <button id="next-arrow" class="carousel-arrow right" title="Próximo"><i class="fas fa-chevron-right"></i></button>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script> 
+</body>
+</html>
