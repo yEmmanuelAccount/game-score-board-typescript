@@ -1,6 +1,10 @@
+// imports
+import { getRequiredElement } from "../utils/dom-utils";
+
 // elements
-const themeButton = document.getElementById('theme-toggle') as HTMLButtonElement | null;
+const themeButton = getRequiredElement<HTMLElement>('theme-toggle');
 const htmlElement = document.documentElement;
+const themeIcon = getRequiredElement<HTMLElement>('theme-icon');
 
 // function
 function toggleTheme(): void {
@@ -13,11 +17,14 @@ function toggleTheme(): void {
         htmlElement.setAttribute('data-theme', 'dark');
 
         // trocar o icone: sol para lua
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+
     } else {
         // mudar para 'claro'
         htmlElement.setAttribute('data-theme', 'light');
 
         // trocar o icone: lua para sol
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
     }
 }
 
