@@ -1,30 +1,41 @@
-# Objetivo
+# 🏆 Game Score Board - Placar dos Jogos Escolares
 
-Registrar de forma mais visual os Jogos Escolares entre dois times (Azul e Branco).
+## 🚀 Objetivo
 
-# Rascunho
+$\quad$ Registrar de forma mais visual e interativa os Jogos Escolares anuais entre dois times: Azul e Branco. O projeto visa transformar dados brutos de pontuação em uma experiência visual rica, com foco na navegação temporal e análise de desempenho.
 
-construa
-1. uma home, sem scroll
-   1. cabeçalho
-      * um botão "GamePlacar" que recarrega ou redireciona o usuário para a primeira página.
-      * do lado direito, no fim do cabeçalho, um botão com formato de `sol` para indicar que o site está em tema claro; se clicado,  transforma-se em uma `lua` e coloca o site em tema escuro.
-      * do lado direito, antes do seletor de temas, um campo que indique que usuário pode criar uma conta ou efetuar login.
-      * centralizado no cabeçalho, uma barra de pesquisa que o usuário poderá pesquisar os anos que estão cadastrados.
-   2. no body
-      * mais na parte superior, uma descrição breve sobre o objetivo do projeto.
-      * abaixo da descrição do projeto, uma div com um carrossel de objetos, no formato de pequenas cartas, representando os anos que já foram cadastrados (2020 até 2025). Ele deve ter uma seta em cada direção para o usuário passar para a "próxima" carta ou voltar uma.
-      * o usuário deve ser capaz de clicar nas cartas e, ao clicar, ser direcionado para a página própria daquela carta.
-      * se o usuário pesquisar um ano que não está cadastrado (portanto não está no carrossel), no lugar do carrossel deve aparecer a mensagem de "_Jogos ainda não cadastrados. Entre em contato se tiver os dados referentes a esse ano._"
+## 🛠️ Tecnologias Utilizadas 
 
-2. CSS
-   * tema claro
-     * fundo claro, mas que não canse de ficar olhando.
-     * letras predominante pretas, para dar contraste com o fundo.
-     * cor de destaque para elementos: branco
-     * cor secundária para elementos: azul escuro
-   * tema escuro
-     * fundo escuro, mas que não canse de ficar olhando.
-     * letras predominante brancas, para dar contraste com o fundo.
-     * cor de destaque para elementos: azul escuro, mas que consiga ser observado facilmente em um fundo escuro
-     * cor secundária para elementos: branco, mas não vibrante para não dar destaque de mais.
+| Tecnologia | Finalidade |
+| :--------- | :--------- |
+| TypeScript | Lógica da aplicação, tipagem estática e modularização. | 
+| HTML | Estrutura semântica do projeto. |
+| CSS | Estilização, responsividade e suporte a temas (Claro/Escuro).... | 
+| (Gráficos) | (Adicionar a biblioteca de gráficos que será usada, ex: Chart.js, D3.js) | 
+
+## ✨ Funcionalidades Principais
+
+### 1. Navegação e Acesso aos Dados (Home Page)
+* **Busca Rápida**: O usuário pode pesquisar diretamente por um ano específico através da barra de pesquisa no cabeçalho.
+* **Carrossel de Anos**: A página inicial apresenta um carrossel interativo que exibe cartões para cada ano de competição registrado, permitindo uma navegação visual e fluida.
+
+### 2. Página de Análise do Ano (Placar Detalhado)
+
+$\quad$ Ao selecionar um ano, o usuário é direcionado para uma página detalhada que oferece uma visão profunda daquela temporada:
+
+#### 2.1. Estrutura de Pontuação
+
+* **Regras Claras**: Uma breve explicação detalha a mecânica de pontuação daquele ano, definindo quantos pontos são concedidos por vitória/empate em diferentes categorias esportivas.
+  * Exemplo: Esportes Individuais (10 pontos p/ vencedor, 0 p/ perdedor); Esportes de Equipe (20 pontos p/ vencedor, 10 p/ perdedor).
+
+#### 2.2. Visualização e Linha do Tempo
+
+* **Gráfico de Linha de Pontuação**: Um gráfico interativo exibe a soma de pontos acumulados por cada time (Eixo Y), mapeada ao longo da linha do tempo de jogos (Eixo X).
+
+* **Linha do Tempo Vertical**: Uma navegação vertical, ordenada cronologicamente, organiza todos os eventos da competição:
+  * **Tópicos (Eventos/Modalidades)**: Agrupados por Dia/Mês — Horas:Minutos. Cada tópico mostra o somatório total de pontos feitos por cada time naquele evento.
+  * **Subtópicos (Jogos)**: Dentro de cada modalidade, são listados os jogos individuais (ex: Jogo 1, Jogo 2). Cada subtópico exibe o placar final e a pontuação concedida a cada time.
+
+### 3. Acesso de Administrador (Futuro)
+
+**Edição Direta**: Usuários com permissão de administrador podem clicar em um jogo específico na linha do tempo para serem redirecionados a uma página de edição. Isso permitirá a inserção ou correção de placares e pontuações de forma dinâmica.
