@@ -7,11 +7,11 @@ $\quad$ Registrar de forma mais visual e interativa os Jogos Escolares anuais en
 ## 🛠️ Tecnologias Utilizadas 
 
 | Tecnologia | Finalidade |
-| :--------- | :--------- |
+| :--------: | :--------- |
 | TypeScript | Lógica da aplicação, tipagem estática e modularização. | 
 | HTML | Estrutura semântica do projeto. |
 | CSS | Estilização, responsividade e suporte a temas (Claro/Escuro).... | 
-| (Gráficos) | (Adicionar a biblioteca de gráficos que será usada, ex: Chart.js, D3.js) | 
+| Gráficos | (biblioteca de gráficos ainda não decidida. ex: Chart.js, D3.js) | 
 
 ## ✨ Funcionalidades Principais
 
@@ -39,3 +39,6 @@ $\quad$ Ao selecionar um ano, o usuário é direcionado para uma página detalha
 ### 3. Acesso de Administrador (Futuro)
 
 **Edição Direta**: Usuários com permissão de administrador podem clicar em um jogo específico na linha do tempo para serem redirecionados a uma página de edição. Isso permitirá a inserção ou correção de placares e pontuações de forma dinâmica.
+
+# a
+
